@@ -1,0 +1,125 @@
+@keyframes shadow-pulse
+{
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes shadow-pulse-big
+{
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 70px rgba(0, 0, 0, 0);
+  }
+}
+
+.pulse1
+{
+  /*float: left;*/
+  /*margin: 40px;
+  width: 130px;
+  height: 130px;*/
+  font: 13px/130px 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #fff;
+  text-align: center;
+  /*background: rgba(30, 144, 255, 0.6);*/
+  border-radius: 50%;
+  animation: shadow-pulse-big 0.73s infinite;
+}
+.pulse2
+{
+  float: left;
+  margin: 75px 40px 0 40px;
+  width: 130px;
+  height: 60px;
+  font: 13px/60px 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+  background: rgba(3, 3, 3, 0.6);
+  border-radius: 3px;
+  animation: shadow-pulse 1s 3;
+}
+.pulse3
+{
+  float: left;
+  font: 13px/130px 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+  background: rgba(30, 144, 255, 0.6);
+  animation: shadow-pulse-big 1s 1;
+}
+
+ 
+#panic{
+      width:25rem;
+      height:25rem;
+      background:red;
+      position:relative;
+      top:30px;
+      }
+
+#sos{
+       position:relative;
+       top:20%;
+       font-size:7rem;
+    }
+
+  .btn-circle { 
+            width: 70px; 
+            height: 70px; 
+            padding: 10px 16px; 
+            border-radius: 50%; 
+            font-size: 12px; 
+            text-align: center; 
+        } 
+
+
+
+    .card-shadow{
+       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+
+    }
+
+    .bg-1{
+       background-color: green;
+    }
+
+    .bg-2{
+       background-color: silver;
+    }
+    .bg-3{
+       background-color: red;
+    }
+
+    .fa-red{
+      color: red;
+    }
+
+    .fa-green{
+      color: green;
+    }
+    .fa-blue{
+      color: blue;
+    }
+
+    .modal-body a{
+      text-decoration: none;
+      color: black;} 
+    
+
+    .mb:hover{
+     color: white;
+     background-color:firebrick;
+     
+    }
