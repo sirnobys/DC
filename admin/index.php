@@ -53,7 +53,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						}
 						</style>
 				</div>
-				<form action="#" method="post">
+				<form action="/controllers/loginsession.php" method="post">
 					<p class="legend">Login Here<span class="fa fa-hand-o-down"></span></p>
 					<div class="input">
 						<input type="text" placeholder="Username" name="username" required />
@@ -63,11 +63,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<input type="password" placeholder="Password" name="password" required />
 						<span class="fa fa-unlock"></span>
 					</div>
-					<button type="submit" class="btn submit">
+					<button type="submit" name="submit" class="btn submit">
 						<span class="fa fa-sign-in"></span>
 					</button>
 				</form>
-				<a href="#" class="bottom-text-w3ls">Forgot Password?</a>
+				<!-- <a href="#" class="bottom-text-w3ls">Forgot Password?</a> -->
 			</div>
 		</div>
 		<!-- //content -->
