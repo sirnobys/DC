@@ -6,7 +6,7 @@ $password= '';
 $db = 'sos';
 
 //connecting to the database
-$con = mysql_connect($host,$user,$password);
-mysqli_select_db($con,$db)
+$con = new mysqi($host,$user,$password,$db);
+//mysqli_select_db($con,$db)
 
 ?>
