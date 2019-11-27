@@ -10,6 +10,20 @@ var isAuthenticated = (req,res,next)=>{
   next()
 }
 
+//messages query
+var messages;
+  var location; 
+  const data = [messages,location];
+  db.query("SELECT * FROM messages ",(err,rows)=>{
+    if (err) throw err;
+    if (rows.length >0){
+      messages = rows;
+    }
+    else {
+      messages = null;
+    }
+  });
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -44,10 +58,15 @@ router.post('/log', async function(req,res,next){
   });
 
     //route to display dashboard page
-router.get('/dashboard',isAuthenticated, function(req, res, next) {
- 
-  res.render('dashboard',{user:req.session.user});
- 
+router.get('/dashboard',isAuthenticated, async function(req, res, next) {
+   var dt = await db.query("select * from messages order by id desc");
+    res.render('dashboard',{
+      user:req.session.user,
+      messages:dt
+    });
+    
+   //res.json(dt);
+  
 });
 
 
