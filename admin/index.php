@@ -53,7 +53,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						}
 						</style>
 				</div>
-				<form action="/controllers/loginsession.php" method="post">
+				<form action="./controllers/loginsession.php" method="post">
 					<p class="legend">Login Here<span class="fa fa-hand-o-down"></span></p>
 					<div class="input">
 						<input type="text" placeholder="Username" name="username" required />
