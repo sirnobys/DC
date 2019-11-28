@@ -8,6 +8,25 @@
  =========================================================
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
+
+ 
+.complete{
+  border-radius:15px;
+  border:none;
+  background: #7CFC00;
+}
+
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+
 .border-primary {
   border-color: #3f6ad8;
 }

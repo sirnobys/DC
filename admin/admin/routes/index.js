@@ -10,20 +10,6 @@ var isAuthenticated = (req,res,next)=>{
   next()
 }
 
-//messages query
-var messages;
-  var location; 
-  const data = [messages,location];
-  db.query("SELECT * FROM messages ",(err,rows)=>{
-    if (err) throw err;
-    if (rows.length >0){
-      messages = rows;
-    }
-    else {
-      messages = null;
-    }
-  });
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
