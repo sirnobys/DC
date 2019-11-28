@@ -55,6 +55,10 @@ router.get('/dashboard',isAuthenticated, async function(req, res, next) {
   
 });
 
+router.post('/pending',isAuthenticated, async function(req,res,next){
+  var dt = await D
+})
+
 
 //route to logout and terminate a user session
 router.get('/logout', function(req, res, next) {
