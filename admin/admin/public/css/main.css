@@ -16,6 +16,9 @@
   background: #7CFC00;
 }
 
+.complete:active{
+ background: red;
+}
 
 
 
