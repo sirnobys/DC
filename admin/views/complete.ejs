@@ -5,13 +5,11 @@
     <div
       class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header"
     >
-      <%-include('partials/navbar')%>
-      <%-include('partials/settings')%>
+      <%-include('partials/navbar')%> <%-include('partials/settings')%>
       <div class="app-main">
         <%-include('partials/sidebar')%>
         <div class="app-main__outer">
           <div class="app-main__inner">
-            
             <div class="row">
               <div class="col-md-12">
                 <div class="main-card mb-3 card">
@@ -26,7 +24,7 @@
                   </div>
                   <div class="table-responsive">
                     <form action="/complete" method="post">
-                        <table
+                      <table
                         class="align-middle mb-0 table table-borderless table-striped table-hover"
                       >
                         <thead>
@@ -39,30 +37,29 @@
                           </tr>
                         </thead>
                         <tbody>
-                            <%  messages.map((message) => { %>
-                              <tr>
-                                 <td><%= message.id %></td> 
-                                <td><%= message.message %></td>
-                                <td><a href="#"><%= message.location %></a></td>
-                                <td><%= message.date %></td>
-                                 <td> 
-                                                 
-                                   <% if(message.status == 0){ %>                            
-                                    <a class="btn btn-danger pending" href="/status/<%= message.id %>?status=0">Pending</a>
-                                   
-                                <% } else{ %>  
-                                  <a class="btn btn-success complete " href="/status/<%= message.id %>?status=1">Complete</a>
-                                <% } %>
-                              </td>
-                              </tr>
-                              
-                           <% }) %>
+                          <% messages.map((message) => { %>
+                           
+                          <tr>
+                            
+                            <td><%= message.id %></td>
+                            <td><%= message.message %></td>
+                            <td><a href="#"><%= message.location %></a></td>
+                            <td><%= message.date %></td>
+                            <td>
+                              <a
+                                class="btn btn-success pending"
+                                href="/status/<%= message.id %>?status=1"
+                                >Complete</a
+                              >
+                            </td>
+                            
+                          </tr>
+                          
+                          <% }) %>
                         </tbody>
                       </table>
                     </form>
-                    
                   </div>
-                 
                 </div>
               </div>
             </div>
@@ -72,6 +69,5 @@
         <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
       </div>
     </div>
-   
   </body>
 </html>

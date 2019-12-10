@@ -41,19 +41,18 @@
                         <tbody>
                             <%  messages.map((message) => { %>
                               <tr>
+                                   
                                  <td><%= message.id %></td> 
                                 <td><%= message.message %></td>
                                 <td><a href="#"><%= message.location %></a></td>
                                 <td><%= message.date %></td>
                                  <td> 
-                                                 
-                                   <% if(message.status == 0){ %>                            
-                                    <a class="btn btn-danger pending" href="/status/<%= message.id %>?status=0">Pending</a>
-                                   
-                                <% } else{ %>  
-                                  <a class="btn btn-success complete " href="/status/<%= message.id %>?status=1">Complete</a>
-                                <% } %>
-                              </td>
+                                                                   
+                                            <a class="btn btn-danger pending" href="/status/<%= message.id %>?status=0">Pending</a>
+                                           
+                                           
+                                </td>
+                               
                               </tr>
                               
                            <% }) %>
