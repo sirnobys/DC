@@ -61,9 +61,9 @@ router.get('/status/:id',isAuthenticated, async function(req,res,next){
   var status = req.query.status;
 
   if(status == '0'){
-    var pending = await db.query("UPDATE messages SET status ='Pending' where id = ?",id); 
-  }else{
     var complete = await db.query("UPDATE messages SET status ='Complete' where id = ?",id); 
+  }else{
+    var pending = await db.query("UPDATE messages SET status ='Pending' where id = ?",id); 
   }
   res.redirect('/dashboard');
 })
@@ -72,7 +72,7 @@ router.get('/status/:id',isAuthenticated, async function(req,res,next){
 
     //route to display pending page
     router.get('/pending',isAuthenticated, async function(req, res, next) {
-      var dt = await db.query("select * from messages where status='' or status='Pending' order by id desc");
+      var dt = await db.query("select * from messages where status is Null order by id desc");
        res.render('pending',{
          user:req.session.user,
          messages:dt
@@ -84,7 +84,7 @@ router.get('/status/:id',isAuthenticated, async function(req,res,next){
    
    //route to display complete page
    router.get('/complete',isAuthenticated, async function(req, res, next) {
-    var dt = await db.query("select * from messages where status='Complete' order by id desc");
+    var dt = await db.query("select * from messages where status is not Null order by id desc");
      res.render('complete',{
        user:req.session.user,
        messages:dt

@@ -47,7 +47,7 @@
                                 <td><%= message.date %></td>
                                  <td> 
                                                  
-                                   <% if(message.status == 0){ %>                            
+                                   <% if(message.status == null){ %>                            
                                     <a class="btn btn-danger pending" href="/status/<%= message.id %>?status=0">Pending</a>
                                    
                                 <% } else{ %>  
