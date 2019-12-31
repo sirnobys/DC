@@ -45,10 +45,14 @@ router.post('/log', async function(req,res,next){
 
     //route to display dashboard page
 router.get('/dashboard',isAuthenticated, async function(req, res, next) {
+  var username = req.session.user.username;
    var dt = await db.query("select * from messages order by id desc");
+   var users = await db.query("SELECT * FROM loginform WHERE username = ? limit 1",username);
+   
     res.render('dashboard',{
       user:req.session.user,
-      messages:dt
+      messages:dt,
+      account:users
     });
     
    //res.json(dt);
@@ -72,10 +76,14 @@ router.get('/status/:id',isAuthenticated, async function(req,res,next){
 
     //route to display pending page
     router.get('/pending',isAuthenticated, async function(req, res, next) {
+      var username = req.session.user.username;
       var dt = await db.query("select * from messages where status is Null order by id desc");
+      //query to print user information
+      var users = await db.query("SELECT * FROM loginform WHERE username = ? limit 1",username);
        res.render('pending',{
          user:req.session.user,
-         messages:dt
+         messages:dt,
+         account:users
        });
        
       //res.json(dt);
@@ -84,10 +92,14 @@ router.get('/status/:id',isAuthenticated, async function(req,res,next){
    
    //route to display complete page
    router.get('/complete',isAuthenticated, async function(req, res, next) {
+    var username = req.session.user.username;
     var dt = await db.query("select * from messages where status is not Null order by id desc");
+    //query to display user details
+    var users = await db.query("SELECT * FROM loginform WHERE username = ? limit 1",username);
      res.render('complete',{
        user:req.session.user,
-       messages:dt
+       messages:dt,
+       account:users
      });
      
     //res.json(dt);
