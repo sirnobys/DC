@@ -1,41 +1,104 @@
-/*
-SQLyog Professional v13.1.1 (64 bit)
-MySQL - 5.7.27-0ubuntu0.18.04.1 : Database - SOS
-*********************************************************************
-*/
+-- phpMyAdmin SQL Dump
+-- version 4.9.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 31, 2019 at 03:53 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
-/*!40101 SET NAMES utf8 */;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-/*!40101 SET SQL_MODE=''*/;
 
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`SOS` /*!40100 DEFAULT CHARACTER SET latin1 */;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-USE `SOS`;
+--
+-- Database: `sos`
+--
 
-/*Table structure for table `messages` */
+-- --------------------------------------------------------
 
-DROP TABLE IF EXISTS `messages`;
+--
+-- Table structure for table `loginform`
+--
+
+CREATE TABLE `loginform` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `loginform`
+--
+
+INSERT INTO `loginform` (`id`, `username`, `password`) VALUES
+(1, 'admin', 'admin'),
+(2, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
 
 CREATE TABLE `messages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `message` varchar(100) DEFAULT NULL,
-  `location` text,
+  `location` text DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `status` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*Data for the table `messages` */
+--
+-- Dumping data for table `messages`
+--
 
-insert  into `messages`(`id`,`message`,`location`,`date`,`time`) values 
-(1,NULL,NULL,NULL,NULL),
-(2,NULL,NULL,NULL,NULL);
+INSERT INTO `messages` (`id`, `message`, `location`, `date`, `time`, `status`) VALUES
+(46, 'HELP ME!!!! find me with this link: ', 'https://www.google.com/maps/search/?query=5.1188876,-1.2937976&api=1', '2019-12-16', '12:30:58', 'Pending'),
+(47, 'HELP ME!!!! find me with this link: ', 'https://www.google.com/maps/search/?query=5.1188826999999995,-1.2939022999999998&api=1', '2019-12-16', '12:34:48', NULL),
+(48, 'HELP ME!!!! find me with this link: ', 'https://www.google.com/maps/search/?query=5.1106446,-1.2987443&api=1', '2019-12-16', '13:05:38', NULL);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `loginform`
+--
+ALTER TABLE `loginform`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `loginform`
+--
+ALTER TABLE `loginform`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
