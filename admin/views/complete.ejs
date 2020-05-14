@@ -33,6 +33,7 @@
                             <th>Message</th>
                             <th class="text-center">Location</th>
                             <th class="text-center">Date</th>
+                            <th class="text-center">Time</th>
                             <th class="text-center">Action</th>
                           </tr>
                         </thead>
@@ -43,8 +44,10 @@
                             
                             <td><%= message.id %></td>
                             <td><%= message.message %></td>
-                            <td><a href="#"><%= message.location %></a></td>
+                            <td><a href="<%= message.location %>" target="_blank">Click here to view location</a></td>
                             <td><%= message.date %></td>
+                            <td><%= message.time %></td>
+
                             <td>
                               <a
                                 class="btn btn-success pending"

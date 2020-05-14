@@ -1,15 +1,15 @@
 <?php
-    $txt='HELP ME!!!! find me with this link: ';
+    $txt=$_POST['txt'];
     $location = urldecode($_POST['findurl']);   
     $api_key = '5d83abc6e259b5d83abc6e25e1';
     $phones = array(
-          'fire' => '0277675089',
-          'medical' => '0244815587',
+          'fire' => '0209028266',
+          'medical' => '0209028266',
           'security' => '0246971090'
     );
     $phone = isset($_POST['action']) ? $phones[$_POST['action']] : '0246971090';
 
-    $sender_id = 'Emergency';
+    $sender_id = 'UCC-SOS';
     $message = $txt.$location;
 
 
